@@ -14,6 +14,8 @@ fun maxSublist A = loop (tl A, hd A, hd A);
 
 maxSublist A;
 
+(* MSList returns the MaxSublist *)
+
 fun aux (msf,_,nil,sl,_) = (msf,sl)
 |	aux	(msf,cm,x::t,sl,csl) = 	if (cm+x>x) then 
 									if (cm+x>msf) then aux (cm+x,cm+x,t,csl@[x],csl@[x])
